@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# get a wallpaper
+wall=$(find ~/Pictures/Wallpapers/ -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)
+
+# set wallpaper
+xwallpaper --zoom $wall
+
+# clear pywal cache
+wal -c
+
+# genrate and setcolor scheme
+wal -i $wall
+
+xdotool key super+F5
+

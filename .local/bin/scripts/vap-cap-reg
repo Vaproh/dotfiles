@@ -1,0 +1,8 @@
+#!/bin/bash
+
+screenshot_dir="/home/vaproh/Pictures/Screenshots"
+
+scrot -s -f $screenshot_dir/%I:%M:%S-%p-%d-%b-%Y-screenshot.png -e 'xclip -selection clipboard -target image/png -i $f'
+
+notify-send "📷 Screenshot Captured!" "You can find your screenshot in:
+~/Pictures/Screenshots/"
