@@ -1,11 +1,14 @@
 #!/bin/bash
 
 url="${WTTRURL:-wttr.in}"
-weatherreport="/home/vaproh/.local/cache/weatherreport"
+weatherreport="/home/vaproh/.cache/weatherreport"
 LOCATION="guna"
 
+# make a file named weatherreport
+touch ~/.cache/weatherreport
+
 # Get a weather report from 'wttr.in' and save it locally.
-getforecast() { timeout --signal=1 2s curl -sf "$url/$LOCATION" > "$weatherreport" || exit 1; }
+getforecast() { timeout --signal=1 10s curl -sf "$url/$LOCATION" > "$weatherreport" || exit 1; }
 
 lat="24.650"
 lon="77.317"
@@ -53,7 +56,7 @@ else
 fi
 
 case $BUTTON in
-	1) getforecast && st -e less -Sf /home/vaproh/.local/cache/weatherreport ;;
+	1) getforecast && st -e less -Sf /home/vaproh/.cache/weatherreport ;;
 	3) notify-send "🌈 Weather module" "\- Middle click to update forecast." ;;
 esac
 

@@ -10,7 +10,7 @@ configuration {
 
 @theme "/dev/null"
 
-@import "~/.cache/wal/colors-rofi-dark"
+@import "~/.cache/wal/colors.rasi"
 
 * {
   border: 0;
@@ -31,7 +31,7 @@ element {
 }
 
 element selected {
-  text-color: @bg;
+  text-color: @fg;
   background-color: @bg-selected;
 }
 
@@ -75,5 +75,6 @@ prompt {
   background-color: @bg-alt;
   text-color: @fg;
 }
+
 
 /* vim: ft=sass

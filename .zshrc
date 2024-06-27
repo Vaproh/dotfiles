@@ -14,9 +14,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/vaproh/.local/bin/scripts:$PATH"
 export PATH="/hone/.local/bin:$PATH"
-export RANGER_LOAD_DEFAULT_RC=false
+export EDITOR='vim'
 
-# Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -99,11 +98,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='mvim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -126,9 +125,10 @@ alias l='exa -F --icons --color=always --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 
 # pacman
-alias install='sudo pacman -S '
-alias uninstall='sudo pacman -Rs'
+alias install='sudo pacman -S'
+alias uninstall='sudo pacman -Rns'
 alias upgrade='sudo pacman -Syu'
+alias search='sudo pacman -Ss'
 
 # clear
 alias clear='clear && colorscript -r'

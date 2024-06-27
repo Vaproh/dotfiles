@@ -4,13 +4,22 @@
 wall=$(find ~/Pictures/Wallpapers/ -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)
 
 # set wallpaper
-xwallpaper --zoom $wall
+xwallpaper --zoom $wall &
 
 # clear pywal cache
-wal -c
+wal -c &
 
 # genrate and setcolor scheme
 wal -i $wall
 
+# fetch colors for dwm
 xdotool key super+F5
 
+# update colors for firefox
+pywalfox update &
+
+# update discord colors
+pywal-discord -p ~/.config/vesktop/themes &
+
+# update gtk theme
+/opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox
