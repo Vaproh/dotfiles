@@ -8,4 +8,6 @@ case $BUTTON in
 - Middle click to open htop." ;;
 esac
 
-free --mebi | sed -n '2{p;q}' | awk '{printf ("^C6^[  %2.2fGiB/%2.2fGiB]\n", ( $3 / 1024), ($2 / 1024))}'
+mem=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
+echo "^B14^^C0^       ^d^^C14^  $mem "
+

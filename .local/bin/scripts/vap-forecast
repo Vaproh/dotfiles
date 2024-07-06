@@ -25,7 +25,7 @@ icon=$(echo "$weather_data" | jq -r '.weather[0].icon'  | tr -d 'nd')
 
 # conditon emoji
 if [[ $icon == 01 ]]; then
-	emoji_con="☀️"
+	emoji_con=""
 elif [[ $icon == 02 ]]; then
 	emoji_con="⛅"
 elif [[ $icon == 03 ]]; then

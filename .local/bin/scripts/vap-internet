@@ -10,8 +10,8 @@ case $BUTTON in
   : wifi disabled
   : no wifi connection
    : wifi connection with quality
-󰈂  : no ethernet
-󰈁  : ethernet working
+  : no ethernet
+  : ethernet working
 󰖂  : vpn is active
 " ;;
 esac
@@ -24,9 +24,9 @@ elif [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'down' ] ; then
 fi
 
 # Ethernet
-[ "$(cat /sys/class/net/e*/operstate 2>/dev/null)" = 'up' ] && ethericon="󰈁" || ethericon="󰈂"
+[ "$(cat /sys/class/net/e*/operstate 2>/dev/null)" = 'up' ] && ethericon=" ^B14^^C0^       ^d^^C14^  Connected" || ethericon=""
 
 # TUN
 [ -n "$(cat /sys/class/net/tun*/operstate 2>/dev/null)" ] && tunicon=" 󰖂 "
 
-printf "^C6^[%s%s%s\n" "$wifiicon$ethericon$tunicon]"
+printf "%s%s%s\n" "$wifiicon$ethericon$tunicon"

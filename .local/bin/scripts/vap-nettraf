@@ -19,6 +19,6 @@ update() {
 rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
 tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
 
-traf=$(printf "%4sB %4sB\\n" $(numfmt --to=iec $rx $tx))
+traf=$(printf " %4sB  %4sB\\n" $(numfmt --to=iec $rx $tx))
 
-echo "^C6^[$traf]"
+echo "$traf"

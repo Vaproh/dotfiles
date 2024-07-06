@@ -35,4 +35,4 @@ case 1 in
 	* ) echo    && exit ;;
 esac
 
-echo "^C6^[$icon$vol%]"
+echo " ^B14^^C0^  $icon  ^d^^C14^  $vol% "

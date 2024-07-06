@@ -54,11 +54,11 @@ class MainWindow(QMainWindow):
         os.system("reboot")
 
     def lock(self):
-        os.system("slock | systemctl suspend")
+        os.system("i3lock-fancy")
 
     def suspend(self):
         window.hide()
-        os.system("systemctl suspend")
+        os.system("i3lock-fancy | systemctl suspend")
         sys.exit()
 
     def exit(self):

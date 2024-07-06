@@ -2,26 +2,12 @@
 
 clock=$(date '+%I')
 
-case "$clock" in
-	"00") icon="🕛" ;;
-	"01") icon="🕐" ;;
-	"02") icon="🕑" ;;
-	"03") icon="🕒" ;;
-	"04") icon="🕓" ;;
-	"05") icon="🕔" ;;
-	"06") icon="🕕" ;;
-	"07") icon="🕖" ;;
-	"08") icon="🕗" ;;
-	"09") icon="🕘" ;;
-	"10") icon="🕙" ;;
-	"11") icon="🕚" ;;
-	"12") icon="🕛" ;;
-esac
+icon=""
 
 case $BUTTON in
-	1) notify-send "This Month" "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/"))" ;;
+	1) notify-send "This Month" "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 esac
 
-clock2=$(date "+%Y %b %d (%a) $icon%I:%M%p")
+clock2=$(date "+%I:%M %P")
 
-echo "^C6^[$clock2]"
+echo "^B14^^C0^   $icon    ^d^^C6^  $clock2"

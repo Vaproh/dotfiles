@@ -15,6 +15,10 @@ wal -i $wall
 # fetch colors for dwm
 xdotool key super+F5
 
+# set mouse color using polychromatic-cli
+source /home/vaproh/.cache/wal/color-razer
+/usr/bin/polychromatic-cli -o static -c $color
+
 # update colors for firefox
 pywalfox update &
 
@@ -23,3 +27,6 @@ pywal-discord -p ~/.config/vesktop/themes &
 
 # update gtk theme
 /opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox
+
+# send a notification that the process is completed
+notify-send "Theme Updated!" "Your wallpapers and colors are changed!"
