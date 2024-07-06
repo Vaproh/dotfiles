@@ -1,7 +1,0 @@
-#!/bin/bash
-
-dwm
-
-sleep 1
-
-setsid -f dwmblocks &
