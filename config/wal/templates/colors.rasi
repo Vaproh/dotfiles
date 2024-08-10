@@ -1,0 +1,9 @@
+* {{
+    bg: {background};
+    bg-alt: {color5};
+    bg-selected: {color2};
+    
+    fg: {foreground};
+    fg-alt: {color10};
+}}
+
