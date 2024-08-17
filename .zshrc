@@ -23,11 +23,12 @@ plugins=(git
 source $ZSH/oh-my-zsh.sh
 
 # Changing "ls" to "exa"
-alias ls='exa --icons --color=always --group-directories-first'
-alias ll='exa -alF --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias l='exa -F --icons --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+alias ls='lsd'
+alias ll='lsd -l'
+alias la='lsd -a'
+alias l='lsd -F'
+alias l.='lsd -a | egrep "^\."'
+alias lsla='lsd -la'
 
 # pacman
 alias install='sudo pacman -S'
