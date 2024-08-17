@@ -16,14 +16,17 @@ wal -i $wall
 xdotool key super+F5
 
 # set mouse color using polychromatic-cli
-source /home/vaproh/.cache/wal/color-razer
-/usr/bin/polychromatic-cli -o static -c $color
+#source /home/vaproh/.cache/wal/color-razer
+#/usr/bin/polychromatic-cli -o static -c $color
 
 # update colors for firefox
 pywalfox update &
 
 # update discord colors
 pywal-discord -p ~/.config/vesktop/themes &
+
+# update telegram colors
+walogram -B
 
 # update gtk theme
 /opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox

@@ -55,6 +55,7 @@ class MainWindow(QMainWindow):
 
     def lock(self):
         os.system("i3lock-fancy")
+        sys.exit()
 
     def suspend(self):
         window.hide()
