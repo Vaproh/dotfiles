@@ -30,3 +30,6 @@ super + d
 super + {space, c, XF86Calculator, e}
   rofi -show {drun,calc,calc,emoji}
 
+# dmenu
+# super + space
+#   dmenu_run_desktop
