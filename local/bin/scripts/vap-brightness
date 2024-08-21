@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# current brightness variable
+brightness=$(xbacklight -get | cut -f1 -d".")
+
+help() {
+  # Display Help
+  echo "Simple script to change brightness and provide notifications"
+  echo
+  echo "Syntax: vap-brightness [-h|-i|-d]"
+  echo "options:"
+  echo "help        Prints help about this command."
+  echo "increase    Increases Brightness by 10%."
+  echo "decrease    Decreases Brightness by 10%."
+  echo
+}
+
+increase ()
+{
+  # increase brightness
+  xbacklight -inc 10
+
+  # notification
+  notify-send -t 3000 "Increased Brightness" "Brightness has been Increased by 10%. Current brightness is $brightness%." 
+}
+
+
+decrease ()
+{
+  # increase brightness
+  xbacklight -dec 10
+
+  # notification
+  notify-send -t 3000 "Decreased Brightness" "Brightness has been decreased by 10%. Current brightness is $brightness%." 
+}
+
+case $1 in
+  increase)
+    increase
+    ;;
+  decrease)
+    decrease
+    ;;
+  *)
+    help
+    ;;
+esac

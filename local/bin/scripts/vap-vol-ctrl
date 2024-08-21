@@ -1,0 +1,63 @@
+#!/bin/sh
+
+
+help() {
+  # Display Help
+  echo "Simple script to change volume and provide notifications"
+  echo
+  echo "options:"
+  echo "help        Prints help about this command."
+  echo "increase    Increases Volume by 5%."
+  echo "decrease    Decreases Volume by 5%."
+  echo "mute        toggles mute state."
+  echo
+}
+
+increase ()
+{
+  # increase volume
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+  # vol var
+  vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -d "." | tr -d "Volume: " | sed 's/^0*//')
+
+  # notification
+  notify-send -t 3000 "Increased Volume" "Volume has been Increased by 5%. Current volume is $vol%." 
+}
+
+
+decrease ()
+{
+  # decrease volume
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+  # vol var
+  vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -d "." | tr -d "Volume: " | sed 's/^0*//')
+
+  # notification
+  notify-send -t 3000 "Decreased Volume" "Volume has been decreased by 5%. Current volume is $vol%." 
+}
+
+mute()
+{
+   # toggle mute
+   wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+   # notification
+   notify-send -t 3000 "Mute toggled" "Mute has been toggled on/off."
+}
+
+case $1 in
+  increase)
+    increase
+    ;;
+  decrease)
+    decrease
+    ;;
+  mute)
+    mute
+    ;;
+  *)
+    help
+    ;;
+esac

@@ -1,0 +1,27 @@
+# Audio function keys
+
+XF86AudioLowerVolume
+  $HOME/.local/bin/scripts/vap-vol-ctrl decrease
+XF86AudioRaiseVolume 
+  $HOME/.local/bin/scripts/vap-vol-ctrl increase
+XF86AudioMute
+  $HOME/.local/bin/scripts/vap-vol-ctrl mute
+
+# brightness function keys
+
+XF86MonBrightnessUp
+  $HOME/.local/bin/scripts/vap-brightness increase
+XF86MonBrightnessDown
+  $HOME/.local/bin/scripts/vap-brightness decrease
+
+
+# music control
+
+XF86AudioPlay
+  mpc toggle
+XF86AudioStop
+  mpc stop
+XF86AudioPrev
+  mpc prev
+XF86AudioNext
+  mpc next
