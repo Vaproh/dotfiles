@@ -1,27 +1,32 @@
 # Audio function keys
-
-XF86AudioLowerVolume
-  $HOME/.local/bin/scripts/vap-vol-ctrl decrease
-XF86AudioRaiseVolume 
-  $HOME/.local/bin/scripts/vap-vol-ctrl increase
+XF86Audio{Lower,Raise}Volume
+  $HOME/.local/bin/scripts/vap-vol-ctrl {decrease,increase}
 XF86AudioMute
   $HOME/.local/bin/scripts/vap-vol-ctrl mute
 
 # brightness function keys
-
-XF86MonBrightnessUp
-  $HOME/.local/bin/scripts/vap-brightness increase
-XF86MonBrightnessDown
-  $HOME/.local/bin/scripts/vap-brightness decrease
-
+XF86MonBrightness{Up,Down}
+  $HOME/.local/bin/scripts/vap-brightness {increase,decrease}
 
 # music control
+XF86Audio{Play,Stop,Prev,Next}
+  mpc -q {toggle,stop,prev,next}
 
-XF86AudioPlay
-  mpc toggle
-XF86AudioStop
-  mpc stop
-XF86AudioPrev
-  mpc prev
-XF86AudioNext
-  mpc next
+# screenshots
+{ctrl,shift} + Print
+  $HOME/.local/bin/scripts/{vap-cap-reg,vap-act-ss}
+
+Print
+  $HOME/.local/bin/scripts/vap-ss
+
+# commands
+super + p
+  $HOME/.local/bin/scripts/wm_power_menu
+
+super + d 
+  setsid -f st -e lfrun
+
+# rofi
+super + {space, c, XF86Calculator, e}
+  rofi -show {drun,calc,calc,emoji}
+
