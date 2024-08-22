@@ -1,7 +1,11 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
 # get a wallpaper
-wall=$(find ~/Pictures/Wallpapers/ -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)
+  wall=$(find $HOME/Pictures/Wallpapers/ -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)
+else
+  wall=$1
+fi
 
 # set wallpaper
 xwallpaper --zoom $wall &
@@ -23,13 +27,13 @@ xdotool key super+F5
 pywalfox update &
 
 # update discord colors
-pywal-discord -p ~/.config/vesktop/themes &
+# pywal-discord -p ~/.config/vesktop/themes &
 
 # update telegram colors
-walogram -B
+walogram
 
 # update gtk theme
-/opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox
+# /opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox
 
 # send a notification that the process is completed
 notify-send "Theme Updated!" "Your wallpapers and colors are changed!"

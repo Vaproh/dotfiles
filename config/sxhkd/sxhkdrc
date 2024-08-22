@@ -12,6 +12,10 @@ XF86MonBrightness{Up,Down}
 XF86Audio{Play,Stop,Prev,Next}
   mpc -q {toggle,stop,prev,next}
 
+# media control
+shift + XF86Audio{Play,Stop,Prev,Next}
+  playerctl -s {play-pause,stop,prev,next}
+
 # screenshots
 {ctrl,shift} + Print
   $HOME/.local/bin/scripts/{vap-cap-reg,vap-act-ss}
@@ -26,10 +30,13 @@ super + p
 super + d 
   setsid -f st -e lfrun
 
+super + v
+  $HOME/.local/bin/scripts/select_wall_nitrogen
+
 # rofi
-super + {space, c, XF86Calculator, e}
-  rofi -show {drun,calc,calc,emoji}
+super + {c, XF86Calculator, e}
+  rofi -show {calc,calc,emoji}
 
 # dmenu
-# super + space
-#   dmenu_run_desktop
+super + space
+  dmenu_run
