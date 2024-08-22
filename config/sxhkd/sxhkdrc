@@ -33,6 +33,9 @@ super + d
 super + v
   $HOME/.local/bin/scripts/select_wall_nitrogen
 
+super + n
+  $HOME/.local/bin/scripts/new_look
+
 # rofi
 super + {c, XF86Calculator, e}
   rofi -show {calc,calc,emoji}
