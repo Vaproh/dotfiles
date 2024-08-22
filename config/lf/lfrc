@@ -1,3 +1,4 @@
+set ratios 1:2:3
 set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 
@@ -22,7 +23,7 @@ cmd mkfile ${{
 }}
 
 cmd setwallpaper ${{
-    xwallpaper --zoom "$f"
+    $HOME/.local/bin/scripts/new_look "$f"
 }}
 
 # Archive bindings
