@@ -1,3 +1,4 @@
-
-# Created by `pipx` on 2024-06-20 10:24:45
-export PATH="$PATH:/home/vaproh/.local/bin"
+# Starting X
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
