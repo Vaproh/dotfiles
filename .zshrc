@@ -1,8 +1,11 @@
-colorscript -r
-
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# colorscript -r
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,11 +16,14 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git
-       	zsh-autosuggestions
+plugins=(
+    git
+    zsh-autosuggestions
 	zsh-syntax-highlighting
 	auto-notify
 	you-should-use
+    fzf-zsh-plugin
+    fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -44,8 +50,10 @@ alias ytpdl="yt-dlp -f best -o '%(playlist_index)s. %(title)s.%(ext)s'"
 
 alias lf=lfrun
 
+alias ccat='bat --color auto'
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Created by `pipx` on 2024-06-20 10:24:45
-export PATH="$PATH:/home/vaproh/.local/bin"
+eval "$(zoxide init zsh)"

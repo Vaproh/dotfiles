@@ -1,9 +1,0 @@
-#!/bin/bash
-
-n=1
-
-while [[ $n==1 ]]; do
-  notify-send "Alert!" "Fix ur poisture pls"
-  sleep 600
-done
-

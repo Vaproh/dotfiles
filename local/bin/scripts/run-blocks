@@ -1,4 +1,0 @@
-#/bin/bash
-
-xdotool exec st && sleep 0.2 && xdotool type "setsid dwmblocks &" && xdotool key return && sleep 0.2 && xdotool key super+q
-
