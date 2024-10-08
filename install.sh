@@ -80,7 +80,7 @@ dependencias=(base-devel bat brightnessctl dunst eza feh gvfs-mtp firefox geany 
                     hicolor-icon-theme harper http-parser i3lock imagemagick iso-codes kvantum lazygit lesspipe linux-firmware \
                     linux-headers lxrandr libxinerama libxft gd imlib2 libsecret libsecret-docs lua lua-language-server \
                     aerc mpv neofetch neovim vim obsidian pavucontrol-qt poppler qt5ct qt6ct lxappearance reflector \
-                    slock sqlite telegram-desktop zoxide xarchiver unrar unzip thunar\
+                    slock sqlite telegram-desktop zoxide xarchiver unrar unzip thunar spotifyd\
                     thunar-volman thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin)
 
 is_installed() {
