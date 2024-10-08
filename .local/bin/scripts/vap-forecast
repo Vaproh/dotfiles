@@ -23,17 +23,19 @@ temprature=$(echo "$weather_data" | jq -r '.main.temp' | cut -c-2)
 
 icon=$(echo "$weather_data" | jq -r '.weather[0].icon'  | tr -d 'nd')
 
-date=$(date "+%H")
-
 # conditon emoji
 if [[ $icon == 01 ]]; then
-    if [[ $date -gt 17 ]]; then
+    if [[ $(date "+%H") -ge 17 ]]; then
         emoji_con=""
     else
         emoji_con=""
     fi
 elif [[ $icon == 02 ]]; then
-	emoji_con=""
+    if [[ $(date "+%H") -ge 17 ]]; then
+        emoji_con=""
+    else
+        emoji_con=""
+    fi
 elif [[ $icon == 03 ]]; then
 	emoji_con=""
 elif [[ $icon == 04 ]]; then
@@ -41,7 +43,7 @@ elif [[ $icon == 04 ]]; then
 elif [[ $icon == 09 ]]; then
 	emoji_con=""
 elif [[ $icon == 10 ]]; then
-    if [[ $date -gt 17 ]]; then
+    if [[ $(date "+%H") -ge 17 ]]; then
         emoji_con=""
     else
         emoji_con=""

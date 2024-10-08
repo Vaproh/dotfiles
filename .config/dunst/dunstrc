@@ -21,7 +21,7 @@
 
     frame_width = 3
 
-    frame_color = "#6a8e9a"
+    frame_color = "#9a9ea3"
 
     separator_color = auto
 
@@ -109,21 +109,21 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#040612"
-    foreground = "#98ccdc"
+    background = "#252e39"
+    foreground = "#dce2ea"
     timeout = 5
     icon = /home/vaproh/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#040612"
-    foreground = "#98ccdc"
+    background = "#252e39"
+    foreground = "#dce2ea"
     timeout = 5
     icon = /home/vaproh/.config/dunst/normal.png
 
 [urgency_critical]
-    background = "#625160"
-    foreground = "#98ccdc"
-    frame_color = "#625160"
+    background = "#E3A7A0"
+    foreground = "#dce2ea"
+    frame_color = "#E3A7A0"
     timeout = 5
     icon = /home/vaproh/.config/dunst/critical.png
 
