@@ -21,7 +21,6 @@ CBL=$(tput setaf 4)
 BLD=$(tput bold)
 CNC=$(tput sgr0)
 
-backup_folder=~/.dotfilesBackup
 date=$(date +%Y%m%d-%H%M%S)
 
 logo () {
@@ -48,20 +47,6 @@ logo () {
     printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
 }
 
-########## ---------- You must not run this as root ---------- ##########
-
-if [ "$(id -u)" = 0 ]; then
-    echo "This script MUST NOT be run as root user."
-    exit 1
-fi
-
-home_dir=$HOME
-current_dir=$(pwd)
-
-if [ "$current_dir" != "$home_dir" ]; then
-    printf "%s%sThe script must be executed from the HOME directory.%s\n" "${BLD}" "${CYE}" "${CNC}"
-    exit 1
-fi
 
 ########## ---------- Welcome ---------- ##########
 
@@ -82,13 +67,20 @@ clear
 
 logo "Installing needed packages.."
 
-dependencias=(alacritty base-devel bat brightnessctl bspwm dunst eza feh gvfs-mtp firefox geany git kitty imagemagick jq \
-			        jgmenu libwebp maim mpc mpd neovim ncmpcpp npm pamixer pacman-contrib \
-			        papirus-icon-theme physlock picom playerctl polybar polkit-gnome python-gobject ranger \
+dependencias=(base-devel bat brightnessctl dunst eza feh gvfs-mtp firefox geany git kitty imagemagick jq \
+			        jgmenu libwebp maim mpc mpd neovim ncmpcpp npm pamixer pacman-contrib nodejs \
+			        papirus-icon-theme physlock picom playerctl python python-pipx polybar polkit-gnome python-gobject ranger \
 			        redshift rofi rustup sxhkd tmux ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
 			        ttf-joypixels ttf-terminus-nerd ttf-ubuntu-mono-nerd ueberzug webp-pixbuf-loader xclip xdg-user-dirs \
 			        xdo xdotool xsettingsd xorg-xdpyinfo xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot \
-			        xorg-xwininfo zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
+			        xorg-xwininfo zsh noto-fonts noto-fonts-emoji bash-completion bash-language server bat batsignal \
+                    breeze breeze-icons btop htop chafa clang clipmenu cmatrix rofi-calc rofi-emoji comicthumb copyq \
+                    curl wget docx2txt dunst electron30 electron31 exo lsd ffmpeg ffmpegthumbnailer file \
+                    gnome-epub-thumbnailer gnome-keyring gnome-themes-extra gnumeric go gtk2 gtk3 gtk4 gtkmm \
+                    hicolor-icon-theme harper http-parser i3lock imagemagick iso-codes kvantum lazygit lesspipe linux-firmware \
+                    linux-headers lxrandr libxinerama libxft gd imlib2 libsecret libsecret-docs lua lua-language-server \
+                    aerc mpv neofetch neovim vim obsidian pavucontrol-qt poppler qt5ct qt6ct lxappearance reflector \
+                    slock sqlite telegram-desktop zoxide xarchiver unrar unzip thunar)
 
 is_installed() {
     pacman -Q "$1" &> /dev/null

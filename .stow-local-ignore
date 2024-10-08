@@ -1,6 +1,11 @@
 # scripts
-install.sh
 install-fonts.sh
+install-yay.sh
+install-lf.sh
+install-zsh.sh
+setup-zsh.sh
+install-yay-stuff.sh
+install.sh
 
 RCS
 .+,v
