@@ -1,0 +1,1 @@
+aerc/wait-for-creds.sh
