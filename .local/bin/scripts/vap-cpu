@@ -17,5 +17,5 @@ sleep 0.5
 read -r cpu a b c idle rest < /proc/stat
 total=$((a+b+c+idle))
 cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-printf " ^B14^^C0^       ^d^^C14^  $cpu%% "
+printf "^B12^^C0^       ^d^^C7^^B8^   $cpu%%  ^d^   "
 

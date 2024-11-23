@@ -2,12 +2,12 @@
 
 clock=$(date '+%I')
 
-icon=""
+icon="󱑆"
 
 case $BUTTON in
 	1) notify-send "This Month" "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 esac
 
-clock2=$(date "+%I:%M %P")
+clock2=$(date "+%a, %I:%M %p")
 
-echo "^B14^^C0^   $icon    ^d^^C6^  $clock2"
+echo "^B10^^C0^   $icon    ^d^^C2^  $clock2   "

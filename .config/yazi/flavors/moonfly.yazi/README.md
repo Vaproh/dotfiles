@@ -1,0 +1,1 @@
+../../../../.dotfiles/.config/yazi/flavors/moonfly.yazi/README.md

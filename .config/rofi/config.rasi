@@ -10,7 +10,14 @@ configuration {
 
 @theme "/dev/null"
 
-@import "~/.cache/wal/colors.rasi"
+* {
+  bg: #23272e;
+  bg-alt: #c162de;
+  bg-selected: #2c313a;
+
+  fg: #abb2bf;
+  fg-alt: #d7dae0;
+}
 
 * {
   border: 0;

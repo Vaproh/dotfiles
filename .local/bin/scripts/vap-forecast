@@ -26,36 +26,36 @@ icon=$(echo "$weather_data" | jq -r '.weather[0].icon'  | tr -d 'nd')
 # conditon emoji
 if [[ $icon == 01 ]]; then
     if [[ $(date "+%H") -ge 17 ]]; then
-        emoji_con=""
+        emoji_con=" "
     else
-        emoji_con=""
+        emoji_con=" "
     fi
 elif [[ $icon == 02 ]]; then
     if [[ $(date "+%H") -ge 17 ]]; then
-        emoji_con=""
+        emoji_con=" "
     else
-        emoji_con=""
+        emoji_con=" "
     fi
 elif [[ $icon == 03 ]]; then
-	emoji_con=""
+	emoji_con=" "
 elif [[ $icon == 04 ]]; then
-	emoji_con=""
+	emoji_con=" "
 elif [[ $icon == 09 ]]; then
-	emoji_con=""
+	emoji_con=" "
 elif [[ $icon == 10 ]]; then
     if [[ $(date "+%H") -ge 17 ]]; then
-        emoji_con=""
+        emoji_con=" "
     else
-        emoji_con=""
+        emoji_con=" "
     fi
 elif [[ $icon == 11 ]]; then
-	emoji_con=""
+	emoji_con=" "
 elif [[ $icon == 13 ]]; then
-	emoji_con="󰜗"
+	emoji_con="󰜗 "
 elif [[ $icon == 50 ]]; then
-	emoji_con=""
+	emoji_con=" "
 else
-	emoji_con="󰲓"
+	emoji_con="󰲓 "
 fi
 
 case $BUTTON in
@@ -64,4 +64,4 @@ case $BUTTON in
 esac
 
 # print temp line
-echo "^B14^^C0^   $emoji_con    ^d^^C6^  $temprature°C "
+echo "^C14^  $emoji_con^C6^  $temprature°C   ^d^"

@@ -5,9 +5,8 @@ case $BUTTON in
 	2) setsid -f st -e btop ;;
 	3) notify-send "🧠 Memory module" "\- Shows Memory Used/Total.
 - Click to show memory hogs.
-- Middle click to open htop." ;;
+- Middle click to open btop." ;;
 esac
 
 mem=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
-echo "^B14^^C0^       ^d^^C14^  $mem "
-
+echo "^C13^     ^C5^  $mem    ^d^"

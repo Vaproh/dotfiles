@@ -41,4 +41,4 @@ visualizer_spectrum_gain = 10
 
 #### notifications ####
 
-# execute_on_song_change = songinfo
+execute_on_song_change = songinfo

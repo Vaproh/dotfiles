@@ -15,7 +15,7 @@ esac
 vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
 # If muted, print 🔇 and exit.
-[ "$vol" != "${vol%\[MUTED\]}" ] && echo " ^B14^^C0^     ^d^^C14^  Muted" && exit
+[ "$vol" != "${vol%\[MUTED\]}" ] && echo "^C11^    ^C3^Muted   " && exit
 
 vol="${vol#Volume: }"
 
@@ -35,4 +35,4 @@ case 1 in
 	* ) echo    && exit ;;
 esac
 
-echo " ^B14^^C0^  $icon  ^d^^C14^  $vol% "
+echo "^C11^ $icon^C3^ $vol%   "

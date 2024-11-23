@@ -21,7 +21,7 @@
 
     frame_width = 3
 
-    frame_color = "#9a9ea3"
+    frame_color = "#abb2bf"
 
     separator_color = auto
 
@@ -109,26 +109,26 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#252e39"
-    foreground = "#dce2ea"
+    background = "#23272e"
+    foreground = "#abb2bf"
     timeout = 5
-    icon = /home/vaproh/.config/dunst/normal.png
+    icon = $HOME/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#252e39"
-    foreground = "#dce2ea"
+    background = "#23272e"
+    foreground = "#abb2bf"
     timeout = 5
-    icon = /home/vaproh/.config/dunst/normal.png
+    icon = $HOME/.config/dunst/normal.png
 
 [urgency_critical]
-    background = "#E3A7A0"
-    foreground = "#dce2ea"
-    frame_color = "#E3A7A0"
+    background = "#e05561"
+    foreground = "#23272e"
+    frame_color = "#ff616e"
     timeout = 5
-    icon = /home/vaproh/.config/dunst/critical.png
+    icon = $HOME/.config/dunst/critical.png
 
 [play_sound]
   summary = "*"
-  script = "/home/vaproh/.local/bin/scripts/notif"
+  script = "$HOME/.local/bin/scripts/notif"
 
 # vim: ft=cfg

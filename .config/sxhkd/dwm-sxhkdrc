@@ -1,0 +1,60 @@
+# Audio function keys
+XF86Audio{Lower,Raise}Volume
+  $HOME/.local/bin/scripts/vap-vol-ctrl {decrease,increase}
+XF86AudioMute
+  $HOME/.local/bin/scripts/vap-vol-ctrl mute
+
+# brightness function keys
+XF86MonBrightness{Up,Down}
+  $HOME/.local/bin/scripts/vap-brightness {increase,decrease}
+
+# music control
+XF86Audio{Play,Stop,Prev,Next}
+  mpc -q {toggle,stop,prev,next}
+
+# media control
+shift + XF86Audio{Play,Stop,Prev,Next}
+  playerctl -s {play-pause,stop,prev,next}
+
+# screenshots
+{ctrl,shift} + Print
+  $HOME/.local/bin/scripts/{vap-cap-reg,vap-act-ss}
+
+Print
+  $HOME/.local/bin/scripts/vap-ss
+
+# commands
+super + shift + m
+  kitty -e aerc
+
+# super + p
+#   $HOME/.local/bin/scripts/wm_power_menu
+
+super + d 
+  kitty -e yazi
+
+super + v
+  nitrogen
+
+# super + v
+  # $HOME/.local/bin/scripts/select_wall_nitrogen
+
+super + n
+  $HOME/.local/bin/scripts/new_look
+
+super + shift + c 
+  clipmenu
+
+# rofi
+super + {c, XF86Calculator, e, space}
+  rofi -show {calc,calc,emoji,drun}
+
+super + p
+  rofi \
+  -show p \
+  -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \
+  -font "JetBrains Mono NF 16" 
+
+# dmenu
+# super + space
+#   dmenu_run -c -l 20

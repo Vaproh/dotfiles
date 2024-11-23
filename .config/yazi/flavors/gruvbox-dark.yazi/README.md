@@ -1,0 +1,1 @@
+../../../../.dotfiles/.config/yazi/flavors/gruvbox-dark.yazi/README.md

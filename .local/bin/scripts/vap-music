@@ -4,13 +4,13 @@ filter() { sed "/^volume:/d;s/\\[paused\\].*/  /g;/\\[playing\\].*/d;/^ERROR/
 
 pidof -x sb-mpdup >/dev/null 2>&1 || sb-mpdup >/dev/null 2>&1 &
 
-status=$(mpc status | filter )
+status=$(mpc status | filter | awk -v FS='-' '{print $2}' )
 
 playing() {
   if [ -z "$status" ]; then
-    echo " "
+    :
   else
-    echo "   $status  "
+    echo "^c#f4b8e4^󰎇 $status  "
   fi
 }
 

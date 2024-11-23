@@ -1,0 +1,8 @@
+# to copy into sys clipboard
+set selection-clipboard clipboard
+
+# side by side mode with 'd' keybind
+map D set "first-page-column 1:1"
+map <C-d> set "first-page-column 1:2"
+
+set font JetBrains
