@@ -121,6 +121,13 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
+# Restart polybar
+#
+
+super + shift + r
+    $HOME/.config/polybar/launch.sh
+
+#
 # Function keys
 #
 
@@ -174,18 +181,15 @@ super + v
 # super + n
 #   $HOME/.local/bin/scripts/new_look
 
-super + shift + c 
+super + alt + c 
   clipcat-menu
 
 # rofi
-super + {c, XF86Calculator, e}
-  rofi -show {calc,calc,emoji}
+super + {c, e}
+  rofi -show {calc,emoji}
 
 super + u
-  rofi \
-  -show p \
-  -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \
-  -font "JetBrains Mono NF 16" 
+  $HOME/.local/bin/scripts/power.sh
 
 # dmenu
 # super + space

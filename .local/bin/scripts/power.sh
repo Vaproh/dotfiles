@@ -2,9 +2,11 @@
 
 # Detect whether we're running on Xorg or Wayland
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    suspend="systemctl suspend && swaylock -i ~/.config/walls/VIM.png"
+    suspend="systemctl suspend && swaylock"
+    lock="swaylock"
 else
-    suspend="systemctl suspend && i3lock -i ~/.config/walls/VIM.png"
+    suspend="systemctl suspend && i3lock-fancy"
+    lock="i3lock-fancy"
 fi
 
 # special method for loggin out :(
@@ -26,13 +28,14 @@ fi
 #     chosen=$(printf "Log Out\nSuspend\nRestart\nPower OFF" | rofi -dmenu -i -theme-str '@import "~/.config/rofi/powermenu.rasi"')
 # fi
 
-chosen=$(printf "Log Out\nSuspend\nRestart\nPower OFF" | rofi -dmenu -i)
-
+chosen=$(printf "Lock\nLog Out\nSuspend\nReboot\nShutdown" | rofi -dmenu -i -l 5 -p ">=" -font "JetBrains Mono NF 16" -theme-str 'window {width: 7em;} listview {lines: 5;}')
+printf $chosen
 # Perform the action based on user choice
 case "$chosen" in
+    "Lock") $lock ;;
     "Log Out") $logout ;;
     "Suspend") eval $suspend ;;
-    "Restart") systemctl reboot ;;
-    "Power OFF") systemctl poweroff ;;
+    "Reboot") systemctl reboot ;;
+    "Shutdown") systemctl poweroff ;;
     *) exit 1 ;;
 esac
