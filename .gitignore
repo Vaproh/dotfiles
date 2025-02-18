@@ -1,1 +1,6 @@
+# yazi
 .config/yazi/plugins/*
+
+# themes
+.config/vesktop/*
+.config/vesktop/!themes

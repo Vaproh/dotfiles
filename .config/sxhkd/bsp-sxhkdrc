@@ -23,7 +23,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -119,3 +119,74 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# Function keys
+#
+
+# Audio function keys
+XF86Audio{Lower,Raise}Volume
+  $HOME/.local/bin/scripts/vap-vol-ctrl {decrease,increase}
+XF86AudioMute
+  $HOME/.local/bin/scripts/vap-vol-ctrl mute
+
+# brightness function keys
+XF86MonBrightness{Up,Down}
+  $HOME/.local/bin/scripts/vap-brightness {increase,decrease}
+
+# music control
+# XF86Audio{Play,Stop,Prev,Next}
+#   mpc -q {toggle,stop,prev,next}
+
+# media control
+XF86Audio{Play,Stop,Prev,Next}
+  playerctl -s {play-pause,stop,prev,next}
+
+# 
+# Screenshots
+#
+
+{ctrl,shift} + Insert
+  $HOME/.local/bin/scripts/{vap-cap-reg,vap-act-ss}
+
+super + Insert
+  $HOME/.local/bin/scripts/vap-ss
+
+#
+# Commands
+#
+
+super + shift + m
+  kitty -e aerc
+
+# super + p
+#   $HOME/.local/bin/scripts/wm_power_menu
+
+super + d 
+  kitty -e yazi
+
+super + v
+  nitrogen
+
+# super + v
+  # $HOME/.local/bin/scripts/select_wall_nitrogen
+
+# super + n
+#   $HOME/.local/bin/scripts/new_look
+
+super + shift + c 
+  clipcat-menu
+
+# rofi
+super + {c, XF86Calculator, e}
+  rofi -show {calc,calc,emoji}
+
+super + u
+  rofi \
+  -show p \
+  -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \
+  -font "JetBrains Mono NF 16" 
+
+# dmenu
+# super + space
+#   dmenu_run -c -l 20

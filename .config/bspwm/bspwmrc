@@ -1,25 +1,61 @@
 #! /bin/sh
+#
+#  ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗██████╗  ██████╗
+#  ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║██╔══██╗██╔════╝
+#  ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║██████╔╝██║
+#  ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║██╔══██╗██║
+#  ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║██║  ██║╚██████╗
+#  ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+#	Author	-	vaproh
+#	Repo	-	https://github.com/vaproh/dotfiles
+#	Copyright (C) 2024-2025 vaproh <vaproh@proton.me>
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-# some nice programs
-sxhkd -c "$HOME/.config/sxhkd/bsp-sxhkdrc" &
-xcompmgr &
-nitrogen --restore &
-$HOME/.config/polybar/launch.sh --shapes &
-dunst &
+#  ╔╗ ╔═╗╔═╗╦ ╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
+#  ╠╩╗╚═╗╠═╝║║║║║║  ║  ║ ║║║║╠╣ ║║ ╦
+#  ╚═╝╚═╝╩  ╚╩╝╩ ╩  ╚═╝╚═╝╝╚╝╚  ╩╚═╝
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc config external_rules_command "${HOME}"/.config/bspwm/ExternalRules
 
-bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap                5
+bspc config split_ratio               0.53
+bspc config single_monocle            true
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config automatic_scheme          longest_side
+bspc config initial_polarity          second_child
+bspc config removal_adjustment        true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+bspc config focus_follows_pointer     true
+bspc config pointer_follows_focus     false
+bspc config pointer_follows_monitor   true
+bspc config pointer_motion_interval   7
+bspc config pointer_modifier          mod4
+bspc config pointer_action1           move
+bspc config pointer_action2           resize_side
+bspc config pointer_action3           resize_corner
+
+#  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
+#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
+#  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
+
+# Launch sxhkd daemon
+pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/sxhkd/bsp-sxhkdrc & }
+
+# Launch picom
+# pidof -q picom || { picom --config "${HOME}"/.config/bspwm/src/config/picom.conf & }
+
+# Launch xcompmgr
+pidof -q xcompmgr || { xcompmgr & }
+
+# Restore Wallpaper
+pidof -q nitrogen || { nitrogen --restore & }
+
+# Launch clipboard daemon
+pidof -q clipcatd || { clipcatd & }
+
+# Launch polkit
+pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
+
+# Launch polybar
+pidof -q polybar || { "${HOME}"/.config/polybar/launch.sh & }

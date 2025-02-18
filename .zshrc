@@ -63,6 +63,9 @@ alias discord-mpd-off="killall mpd-discord-rpc"
 # tty-clock
 alias tty-clock='tty-clock -S -c -b -t -n -B'
 
+# update mirrors
+alias update-mirrors='sudo reflector --country India --age 12 --sort rate --save /etc/pacman.d/mirrorlist'
+
 # zoxide
 eval "$(zoxide init zsh)"
 
