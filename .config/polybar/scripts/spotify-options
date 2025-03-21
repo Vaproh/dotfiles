@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Check if Spotify is running
+if ! playerctl --player=spotify metadata > /dev/null 2>&1; then
+  exit 0
+fi
+
+play=""
+pause=""
+previous=""
+next=""
+
+case "$1" in
+  --status)  # Combined play/pause logic
+    status=$(playerctl --player=spotify status)
+    if [[ "$status" == "Playing" ]]; then
+      echo "$play"
+    elif [[ "$status" == "Paused" ]]; then
+      echo "$pause"
+    else
+      echo "Unknown Status"
+      exit 1
+    fi
+    ;;
+  --previous)
+    echo "$previous"
+    ;;
+  --next)
+    echo "$next"
+    ;;
+  *)
+    echo "Invalid Option."
+    exit 1
+    ;;
+esac
+
+exit 0

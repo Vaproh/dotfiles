@@ -1,16 +1,11 @@
-# neofetch at start
-# neofetch --kitty ~/.config/neofetch/neofetch.jpg --size 350px --gap 3 --crop fit
+# neofetch --kitty ~/Downloads/weirdcore.png --size 350px --gap 3 --crop fit
+colorscript -r
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# colorscript -r
-
-# Path to your oh-my-zsh installation.
+# Path 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -18,7 +13,8 @@ export EDITOR='nvim'
 export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="minimal"
 
 plugins=(
 	git
@@ -55,6 +51,9 @@ alias ytpdl="yt-dlp -f best -o '%(playlist_index)s. %(title)s.%(ext)s'"
 alias lf=lfrun
 
 alias ccat='bat --color auto'
+
+alias music='tmux new-session -s $$ "tmux source-file ~/.config/ncmpcpp/tsession"'
+# _trap_exit() { tmux kill-session -t $$; }
 
 # mpd-discord
 alias discord-mpd-on="setsid mpd-discord-rpc &"

@@ -37,10 +37,13 @@ case "$class" in
 		result "state=floating focus=on sticky=on"
 		;;
     mpv)
-		result "state=floating focus=on center=on rectangle=723x407+0+0"
+		result "state=floating focus=on center=on rectangle=1280x720+0+0"
+        ;;
+    feh)
+        result "state=floating focus=on center=on rectangle=1280x720+0+0"
         ;;
     TelegramDesktop)
-        result "desktop=^8 follow=on"
+        result "state=floating desktop=^8 follow=on rectangle=400x800+0+0 center=on"
         ;;
     vesktop)
         result "desktop=^8 follow=on"
@@ -83,6 +86,16 @@ case "$class" in
         ;;
     Nitrogen)
         result "state=floating center=on focus=on"
+        ;;
+    spotify_player)
+        result "desktop=^7 follow=on"
+        ;;
+    SoulseekQt)
+        result "desktop=^6 follow=on"
+        ;;
+    minecraft-auncher)
+        result "desktop=^9 follow=on"
+        ;;
 esac
 
 case "$instance" in
