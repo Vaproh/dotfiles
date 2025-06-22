@@ -33,11 +33,6 @@ recent_projects
 Pictures/Memes/
 Pictures/Screenshots/
 
-# === Pywal, Theme Cache Outputs ===
-.config/wal/
-.config/*/pywal.css
-.config/*/pywal.conf
-
 # === Application States and Databases ===
 .config/mpd/database
 .config/ncmpcpp/error.log
@@ -53,14 +48,6 @@ Pictures/Screenshots/
 .tmux/plugins/tpm/tests/
 .tmux/plugins/tmux/.git/
 .tmux/plugins/tmux/.github/
-
-# === Unneeded Shell Files ===
-.fzf/
-.fzf.zsh
-
-# === Misc install and local scripts (optional) ===
-install*.sh
-setup-*.sh
 
 # === Exclude backups, history, temporary ===
 *~
