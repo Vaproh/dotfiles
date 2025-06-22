@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Module showing CPU load as a changing bars.
+# Just like in polybar.
+# Each bar represents amount of load on one core since
+# last run.
+
+case $BUTTON in
+	1) setsid -f st -e btop ;;
+	3) notify-send "🪨 CPU load module" "Left click to open bashtop";;
+esac
+
+
+read -r cpu a b c previdle rest < /proc/stat
+prevtotal=$((a+b+c+previdle))
+sleep 0.5
+read -r cpu a b c idle rest < /proc/stat
+total=$((a+b+c+idle))
+cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+printf "^B12^^C0^       ^d^^C7^^B8^   $cpu%%  ^d^   "
+

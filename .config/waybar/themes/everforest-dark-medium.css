@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                            |\/|            */
+/*   everforest-dark-medium.css                            /`._ |  | _.'\       */
+/*                                                      /              \      */
+/*   By: Vaproh <vaproh@proton.me>                     /     batman     \     */
+/*                                                    / .-.          .-. \    */
+/*   Created: 2025/06/07 20:47:33 by Vaproh           |/   \.-.  .-./   \|    */
+/*   Updated: 2025/06/07 20:47:33 by Vaproh                    \/             */
+/*                                                                            */
+/* ************************************************************************** */
+
+@define-color background #2D353B;
+@define-color foreground #D3C6AA;
+@define-color color0 #343F44;
+@define-color color1 #E67E80;
+@define-color color2 #A7C080;
+@define-color color3 #DBBC7F;
+@define-color color4 #7FBBB3;
+@define-color color5 #D699B6;
+@define-color color6 #83C092;
+@define-color color7 #D3C6AA;
+@define-color color8 #5C6A72;
+@define-color color9 #F85552;
+@define-color color10 #8DA101;
+@define-color color11 #DFA000;
+@define-color color12 #3A94C5;
+@define-color color13 #DF69BA;
+@define-color color14 #35A77C;
+@define-color color15 #DFDDC8;

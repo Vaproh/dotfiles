@@ -1,0 +1,308 @@
+{
+    // ⚙️ General Settings
+    "reload_style_on_change": true,
+    "height": 42,
+    // 📌 Module Positions
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "mpris"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/weather",
+        "custom/weather-moon",
+        "custom/notification",
+    ],
+    "modules-right": [
+        "custom/updates",
+        "tray",
+        "temperature",
+        "network#vpn",
+        "network",
+        "battery",
+        "group/brightness",
+        "group/speaker",
+        "pulseaudio#mic",
+        "custom/power",
+    ],
+    // =============
+    // 🏁 LEFT MODULES
+    // =============
+    "custom/launcher": {
+        "on-click": "$HOME/.local/bin/scripts/launcher.sh",
+        "format": "<span font-size='x-large'>󰣇</span>", // Arch logo
+        "tooltip": true,
+        "tooltip-format": "arch btw ;)",
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            "1": "ter", // Terminal
+            "2": "cod", // Code
+            "3": "www", // Browser
+            "4": "sof", // Software
+            "5": "util", // Utility
+            "6": "vid", // Videos/Movies
+            "7": "mus", // Music
+            "8": "chat", // Chat apps
+            "9": "soc", // Other stuff tht need seperate workspace
+        },
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} {dynamic}",
+        "format-stopped": "", // Hide when stopped
+        "format-disconnected": "", // Hide when disconnected
+        "dynamic-len": 25,
+        "dynamic-order": [
+            "title",
+            "artist",
+            "position",
+            "length"
+        ],
+        "interval": 1,
+        "player-icons": {
+            "default": "<span color='#76946a'><big></big></span>", // Music note
+            "spotify": "<span color='#1DB954'><big></big></span>", // Spotify logo
+            "firefox": "<span color='#FF7139'><big></big></span>", // Firefox logo
+        },
+        "status-icons": {
+            "paused": "<span color='#c34043'><big></big></span>", // Pause icon
+            "playing": "<span color='#76946a'><big></big></span>", // Play icon
+        },
+        "ignored-players": [
+            "firefox"
+        ],
+        "max-length": 40,
+        "ellipsis": "…",
+        "tooltip-format": "{player}: {title}\n{artist}\n{album}",
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl next",
+        "on-click-right": "playerctl previous",
+    },
+    // ===============
+    // 🎯 CENTER MODULES
+    // ===============
+    "clock": {
+        "format": "{:%d/%m/%y %a %I:%M %p}",
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "locale": "en_US.UTF-8",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#957fb8'>{}</span>",
+                "days": "<span color='#dcd7ba'>{}</span>",
+                "weeks": "<span color='#7e9cd8'>{}</span>",
+                "weekdays": "<span color='#76946a'>{}</span>",
+                "today": "<span background='#c34043' color='#1f1f28'>{}</span>",
+            },
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+        },
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "wttrbar --date-format '%A, %d %b %Y' --location guna --hide-conditions --observation-time",
+        "return-type": "json",
+    },
+    "custom/weather-moon": {
+        "format": " {}",
+        "tooltip": false,
+        "interval": 1800,
+        "exec": "curl -s 'wttr.in/guna?format=%m'",
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span font-size='large'>{icon}</span>",
+        "format-icons": {
+            "notification": "", // Bell with dot
+            "none": "", // Bell
+            "dnd-notification": "", // DND with dot
+            "dnd-none": "", // DND
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-middle": "swaync-client -C",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true,
+    },
+    // ==============
+    // 🚀 RIGHT MODULES
+    // ==============
+    "custom/updates": {
+        "format": "<span font-size='large'>{}</span>",
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
+        "on-click": "kitty --class floating -e 'paru' && killall -SIGUSR2 waybar",
+        "return-type": "json",
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10,
+    },
+    "temperature": {
+        "critical-threshold": 70,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ], // Temp icons
+    },
+    "network#vpn": {
+        "interval": 5,
+        "interface": "tun0",
+        "format": "<span font-size='large'>󰞀</span>", // VPN icon
+        "format-disconnected": "",
+        "tooltip-format": "VPN Connected: {ipaddr}",
+    },
+    "network": {
+        "format-wifi": "<span font-size='medium' rise='1.5pt'>{essid}</span> <span font-size='large'>{icon}</span>",
+        "format-ethernet": "<span font-size='medium' rise='1.5pt'>Wired</span> <span font-size='large'>󰛳</span>",
+        "format-linked": "<span font-size='medium' rise='1.5pt'>No Internet</span> <span font-size='large'>󰍸</span>",
+        "format-disconnected": "<span font-size='medium' rise='1.5pt'>Disconnected</span> <span font-size='large'>󰲛</span>",
+        "format-alt": "{ifname}: {ipaddr} {essid} {signalStrength}",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ], // Wifi strength icons
+        "family": "ipv4",
+        "on-click-right": "kitty --class floating -e nmtui",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "battery": {
+        "interval": 1,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "<span font-size='medium' rise='1.5pt'>{capacity}%</span> <span font-size='x-large'>{icon}</span>",
+        "format-charging": "<span font-size='medium' rise='1.5pt'>{capacity}%</span> <span font-size='x-large'>󰂄</span>",
+        "format-plugged": "<span font-size='medium' rise='1.5pt'>{capacity}%</span> <span font-size='x-large'>󱐥</span>",
+        "format-alt": "{timeto} {power}",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ], // Battery icons
+    },
+    "group/brightness": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-brightness",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ],
+    },
+    "backlight": {
+        "interval": 2,
+        "format": "<span font-size='medium' rise='1.5pt'>{percent}%</span> <span font-size='x-large'>{icon}</span>",
+        "format-icons": [
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󱩑",
+            "󱩒",
+            "󱩓",
+            "󱩔",
+            "󱩕",
+            "󱩖",
+            "󰛨"
+        ], // Brightness icons
+        "on-scroll-up": "brightnessctl set +1",
+        "on-scroll-down": "brightnessctl set -1",
+        "tooltip": true,
+        "tooltip-format": "Brightness: {percent}%",
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+    },
+    "group/speaker": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-speaker",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "pulseaudio#speaker",
+            "pulseaudio/slider"
+        ],
+    },
+    "pulseaudio#speaker": {
+        "format": "<span font-size='medium' rise='2.5pt'>{volume}%</span> <span font-size='x-large'>{icon}</span>",
+        "format-bluetooth": "{volume} {icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "<span font-size='x-large'>󰖁</span>",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󱄠",
+                "󰕾"
+            ], // Volume icons
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink",
+        "on-click-right": "pavucontrol-qt",
+        "tooltip-format": "{desc} - {volume}",
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+    },
+    "pulseaudio#mic": {
+        "format": "<span font-size='x-large'>{format_source}</span>",
+        "format-source": "󰍬", // Mic on
+        "format-source-muted": "󰍭", // Mic off
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol",
+        "on-click-right": "pactl set-source-volume @DEFAULT_SOURCE@ 100%",
+        "tooltip-format": "Mic: {format_source}",
+    },
+    "custom/power": {
+        "on-click": "wlogout",
+        "on-click-right": "playerctl pause | hyprlock",
+        "format": "<span font-size='x-large'>󰐥</span>", // Power icon
+        "tooltip": false,
+    },
+}

@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                            |\/|            */
+/*   one-dark.css                            /`._ |  | _.'\       */
+/*                                                      /              \      */
+/*   By: Vaproh <vaproh@proton.me>                     /     batman     \     */
+/*                                                    / .-.          .-. \    */
+/*   Created: 2025/06/07 20:47:33 by Vaproh           |/   \.-.  .-./   \|    */
+/*   Updated: 2025/06/07 20:47:33 by Vaproh                    \/             */
+/*                                                                            */
+/* ************************************************************************** */
+
+@define-color background #23272e;
+@define-color foreground #abb2bf;
+@define-color color0 #3f4451;
+@define-color color1 #e05561;
+@define-color color2 #8cc265;
+@define-color color3 #d18f52;
+@define-color color4 #4aa5f0;
+@define-color color5 #c162de;
+@define-color color6 #42b3c2;
+@define-color color7 #d7dae0;
+@define-color color8 #4f5666;
+@define-color color9 #ff616e;
+@define-color color10 #a5e075;
+@define-color color11 #f0a45d;
+@define-color color12 #4dc4ff;
+@define-color color13 #de73ff;
+@define-color color14 #4cd1e0;
+@define-color color15 #e6e6e6;

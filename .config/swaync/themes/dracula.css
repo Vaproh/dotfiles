@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                            |\/|            */
+/*   dracula.css                            /`._ |  | _.'\       */
+/*                                                      /              \      */
+/*   By: Vaproh <vaproh@proton.me>                     /     batman     \     */
+/*                                                    / .-.          .-. \    */
+/*   Created: 2025/06/07 20:47:33 by Vaproh           |/   \.-.  .-./   \|    */
+/*   Updated: 2025/06/07 20:47:33 by Vaproh                    \/             */
+/*                                                                            */
+/* ************************************************************************** */
+
+@define-color background #282A36;
+@define-color foreground #F8F8F2;
+@define-color color0 #21222C;
+@define-color color1 #E64747;
+@define-color color2 #42E66C;
+@define-color color3 #E4F34A;
+@define-color color4 #9B6BDF;
+@define-color color5 #E356A7;
+@define-color color6 #75D7EC;
+@define-color color7 #F8F8F2;
+@define-color color8 #7A7A7A;
+@define-color color9 #FF5555;
+@define-color color10 #50FA7B;
+@define-color color11 #F1FA8C;
+@define-color color12 #BD93F9;
+@define-color color13 #FF79C6;
+@define-color color14 #8BE9FD;
+@define-color color15 #F9F9FB;

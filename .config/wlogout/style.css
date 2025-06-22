@@ -1,0 +1,54 @@
+@import url("themes/tokyo-night.css");
+
+/* Sync color names to theme */
+@define-color bg-color @background;
+@define-color fg-color @foreground;
+@define-color button-bg @color0;
+@define-color tn-red @color1;
+@define-color tn-green @color2;
+@define-color tn-yellow @color3;
+@define-color tn-blue @color4;
+@define-color tn-purple @color5;
+
+* {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0px; /* Remove global rounding */
+}
+
+window {
+    background-color: @bg-color;
+    border-radius: 0px; /* Square window */
+    border: 2px solid @color0;
+}
+
+/* Buttons */
+button {
+    background-color: @button-bg;
+    color: @fg-color;
+    border-radius: 20px; /* Only buttons rounded */
+    margin: 10px;
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: @tn-blue;
+    color: @bg-color;
+    border: 2px solid @fg-color;
+}
+
+/* Button icons */
+#lock      { background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png")); }
+#logout    { background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png")); }
+#suspend   { background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png")); }
+#shutdown  { background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png")); }
+#reboot    { background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png")); }
+

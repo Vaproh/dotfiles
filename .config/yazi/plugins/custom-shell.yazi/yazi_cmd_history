@@ -1,0 +1,1 @@
+zsh -ic 'g clone https://github.com/ZephyrCodesStuff/pywal-vencord/raw/refs/heads/main/colors-discord.css;exit'

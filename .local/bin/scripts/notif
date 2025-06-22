@@ -1,0 +1,3 @@
+#!/bin/bash
+
+paplay /home/vaproh/.local/bin/scripts/notif.ogg

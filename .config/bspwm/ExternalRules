@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+#  ███████╗██╗  ██╗████████╗███████╗██████╗ ███╗   ██╗ █████╗ ██╗
+#  ██╔════╝╚██╗██╔╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██╔══██╗██║
+#  █████╗   ╚███╔╝    ██║   █████╗  ██████╔╝██╔██╗ ██║███████║██║
+#  ██╔══╝   ██╔██╗    ██║   ██╔══╝  ██╔══██╗██║╚██╗██║██╔══██║██║
+#  ███████╗██╔╝ ██╗   ██║   ███████╗██║  ██║██║ ╚████║██║  ██║███████╗
+#  ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+#
+#              ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+#              ██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+#              ██████╔╝██║   ██║██║     █████╗  ███████╗
+#              ██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║
+#              ██║  ██║╚██████╔╝███████╗███████╗███████║
+#              ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝
+#	[Author] : vaproh
+#	 [Url]   : https://github.com/vaproh/dotfiles
+#
+
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+
+result() {
+    eval "$consequences"
+    [ "$state" ] || echo "$1"
+}
+
+case "$class" in
+    FloaTerm)
+		result "state=floating center=on rectangle=696x399+0+0"
+        ;;
+    Updating)
+		result "state=floating sticky=on center=on rectangle=390x405+0+0"
+        ;;
+	Scratch)
+		result "state=floating focus=on sticky=on"
+		;;
+    mpv)
+		result "state=floating focus=on center=on rectangle=1280x720+0+0"
+        ;;
+    feh)
+        result "state=floating focus=on center=on rectangle=1280x720+0+0"
+        ;;
+    TelegramDesktop)
+        result "state=floating desktop=^8 follow=on rectangle=400x800+0+0 center=on"
+        ;;
+    vesktop)
+        result "desktop=^8 follow=on"
+        ;;
+    pavucontrol)
+        result "state=floating center=on"
+        ;;
+    Thunar)
+        result "desktop=^2 follow=on"
+        ;;
+    firefox|Navigator)
+        result "desktop=^3 follow=on"
+        ;;
+    Brave-browser)
+        result "desktop=^3 follow=on"
+        ;;
+    code-oss)
+        result "desktop=^4 follow=on"
+        ;;
+    obs)
+        result "desktop=^5 follow=on"
+        ;;
+    Virt-manager)
+        result "desktop=^4 follow=on"
+        ;;
+    vlc)
+        result "desktop=^6 follow=on"
+        ;;
+    AudioRelay)
+        result "desktop=^5 follow=on"
+        ;;
+    Spotify)
+        result "desktop=^7 follow=on"
+        ;;
+    qBittorrent)
+        result "desktop=^4 follow=on"
+        ;;
+    Thorium-browser)
+        result "desktop=^3 follow=on"
+        ;;
+    Nitrogen)
+        result "state=floating center=on focus=on"
+        ;;
+    spotify_player)
+        result "desktop=^7 follow=on"
+        ;;
+    SoulseekQt)
+        result "desktop=^6 follow=on"
+        ;;
+    minecraft-auncher)
+        result "desktop=^9 follow=on"
+        ;;
+esac
+
+case "$instance" in
+    Toolkit)
+        result "state=floating sticky=on rectangle=500x290+1054+593"
+        ;;
+	YaziTerm)
+		result "state=floating center=on rectangle=900x342+0+0"
+		;;
+	MusicTerm)
+		result "state=floating center=on rectangle=656x343+0+0"
+		;;
+	FetchTerm)
+		result "state=floating center=on rectangle=369x601+0+0"
+		;;
+esac

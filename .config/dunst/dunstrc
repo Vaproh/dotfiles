@@ -1,0 +1,137 @@
+[global]
+    monitor = 0
+
+    follow = mouse
+
+    geometry = "0x0-100+40"
+
+    indicate_hidden = yes
+
+    shrink = yes
+
+    transparency = 0
+
+    notification_height = 0
+
+    separator_height = 2
+
+    padding = 8
+
+    horizontal_padding = 8
+
+    frame_width = 3
+
+    frame_color = "#abb2bf"
+
+    separator_color = auto
+
+    sort = yes
+
+    idle_threshold = 120
+
+    font = JetBrains Mono Medium 10
+
+    line_height = 0
+
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+
+    alignment = center
+
+    show_age_threshold = 60
+
+    word_wrap = yes
+
+    ellipsize = middle
+
+    ignore_newline = no
+
+    stack_duplicates = true
+
+    hide_duplicate_count = false
+
+    show_indicators = yes
+
+    icon_position = left
+
+    max_icon_size = 128
+
+    icon_path = /usr/share/icons/breeze-dark/status/16/:/usr/share/icons/breeze-dark/devices/16/
+
+    sticky_history = yes
+
+    history_length = 10
+
+    dmenu = /usr/bin/dmenu -p dunst:
+
+    browser = /usr/bin/firefox
+
+    always_run_script = true
+
+    title = Dunst
+
+    class = Dunst
+
+    startup_notification = false
+
+    # Manage dunst's desire for talking
+    # Can be one of the following values:
+    #  crit: Critical features. Dunst aborts
+    #  warn: Only non-fatal warnings
+    #  mesg: Important Messages
+    #  info: all unimportant stuff
+    # debug: all less than unimportant stuff
+    verbosity = mesg
+
+    corner_radius = 5
+
+    force_xinerama = false
+
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[experimental]
+    per_monitor_dpi = false
+
+[shortcuts]
+    # Close notification.
+    close = ctrl+space
+
+    # Close all notifications.
+    close_all = ctrl+shift+space
+
+    history = ctrl+grave
+
+    # Context menu.
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#23272e"
+    foreground = "#abb2bf"
+    timeout = 5
+    icon = $HOME/.config/dunst/normal.png
+
+[urgency_normal]
+    background = "#23272e"
+    foreground = "#abb2bf"
+    timeout = 5
+    icon = $HOME/.config/dunst/normal.png
+
+[urgency_critical]
+    background = "#e05561"
+    foreground = "#23272e"
+    frame_color = "#ff616e"
+    timeout = 5
+    icon = $HOME/.config/dunst/critical.png
+
+[play_sound]
+  summary = "*"
+  script = "$HOME/.local/bin/scripts/notif"
+
+[Spotify]
+	appname = Spotify
+	frame_color = "#30AB70"
+	timeout = 5
+

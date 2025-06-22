@@ -1,0 +1,15 @@
+theme = OneHalfDark
+# theme = GruvboxDark
+# font-family = Meslo LGS Nerd Font Mono
+# font-family = CaskaydiaMono Nerd Font
+font-family = IosevkaTerm Nerd Font
+font-size = 14.0
+# background-opacity = 0.95
+gtk-titlebar = false
+shell-integration = zsh
+class = Ghostty
+x11-instance-name = Ghostty
+title = Ghostty
+gtk-single-instance=true
+# custom-shader = /home/chris/bloom.glsl
+#custom-shader = /home/chris/crt.glso

@@ -1,0 +1,278 @@
+@import "./themes/tokyo-night.css";
+
+/* Global Waybar Settings */
+* {
+    font-family: JetBrainsMono NFP;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Waybar */
+#waybar {
+    background: @background;
+    color: @foreground;
+}
+
+/* Tooltips */
+tooltip {
+    color: @foreground;
+    background: @background;
+    border: 2px solid @foreground;
+}
+
+#tray,
+#clock,
+#clock.date,
+#mpris,
+#battery,
+#workspaces,
+#network,
+#network.vpn,
+#pulseaudio.speaker,
+#pulseaudio-slider,
+#pulseaudio.mic,
+#backlight,
+#backlight-slider,
+#temperature,
+#custom-launcher,
+#custom-power,
+#custom-notification,
+#custom-updates {
+    margin: 0px 1px;
+    padding: 0px 3px;
+}
+
+/* Center modules styling */
+.modules-center {
+    margin: 0px 5px;
+    padding: 0 4px;
+}
+
+/* Left modules styling */
+#temperature,
+#network.vpn,
+#network,
+#battery,
+#backlight,
+#pulseaudio.speaker,
+#pulseaudio.speaker.muted,
+#pulseaudio.mic,
+#pulseaudio.mic.source-muted {
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: @color0;
+}
+
+#temperature:hover,
+#pulseaudio.speaker:hover,
+#pulseaudio.speaker.muted:hover,
+#pulseaudio.mic:hover,
+#pulseaudio.mic.source-muted:hover,
+#backlight:hover,
+#battery:hover,
+#network.vpn:hover,
+#network:hover {
+    background: @background;
+    color: @foreground;
+    box-shadow: 0px 0px 4px @foregound;
+}
+
+/* Weather and clock spacing */
+#clock {
+    margin: 0px 5px;
+}
+
+#custom-weather {
+    margin: 0px 5px;
+}
+
+/* Specific Module Styling */
+#mpris {
+    margin: 0px 5px;
+}
+
+#custom-updates {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: @color4;
+}
+
+#tray {
+    margin-top: 1px;
+    padding-left: 10px;
+}
+
+#network.vpn {
+    color: @color11;
+}
+
+#pulseaudio.speaker {
+    min-width: 13px;
+}
+
+#pulseaudio.mic {
+    color: @color2;
+    min-width: 13px;
+}
+
+#pulseaudio.speaker.muted {
+    color: @color1;
+}
+
+#pulseaudio.mic.source-muted {
+    color: @color1;
+}
+
+#custom-notification.notification {
+    color: @color4;
+}
+
+#custom-notification.dnd-none {
+    color: @color1;
+}
+
+#custom-notification.dnd-notification {
+    color: @color1;
+}
+
+#custom-notification {
+    margin-left: 12px;
+}
+
+#custom-weather-moon {
+    margin-left: -5px;
+}
+
+#custom-weather {
+    margin-left: -2px;
+}
+
+#custom-launcher {
+    color: #1793d1;
+    margin: 0px 0px 0px 10px;
+    border-radius: 0px;
+    font-size: 20;
+    padding-right: 7px;
+}
+
+#custom-power {
+    color: @color1;
+    margin: 0px 0px 0px 5px;
+    margin-top: 1px;
+    border-radius: 0px;
+    font-size: 21;
+    padding-right: 7px;
+}
+
+#temperature.critical {
+    color: @color1;
+}
+
+/* Workspace Buttons */
+#workspaces {
+    margin: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 10px;
+    border: 10px;
+    border-color: @foreground;
+    background-color: @color0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 2px;
+    min-width: 20px;
+    color: @foreground;
+    border-radius: 0px;
+    transition: background 0.15s ease-in-out;
+}
+
+#workspaces button.empty {
+    color: @color8;
+}
+
+#workspaces button.active {
+    color: @color10;
+}
+
+#workspaces button.urgent {
+    background: @color12;
+    color: @background;
+    animation: urgent-pulse 1s infinite;
+}
+
+@keyframes urgent-pulse {
+    0% {
+        background: @color12;
+    }
+
+    50% {
+        background: @color13;
+    }
+
+    100% {
+        background: @color12;
+    }
+}
+
+#workspaces button:hover {
+    color: @background;
+}
+
+/* Slider styles */
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 100px;
+    border-radius: 30px;
+    border-color: @color0;
+    background-color: @background;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 10px;
+    border-color: @color0;
+    background-color: @foreground;
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough {
+    min-height: 10px;
+    min-width: 100px;
+    border-radius: 30px;
+    border-color: @color0;
+    background-color: @background;
+}
+
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 10px;
+    border-color: @color0;
+    background-color: @foreground;
+}
+

@@ -1,0 +1,67 @@
+#!/bin/bash
+
+url="${WTTRURL:-wttr.in}"
+weatherreport="/home/vaproh/.cache/weatherreport"
+LOCATION="guna"
+
+# make a file named weatherreport
+touch ~/.cache/weatherreport
+
+# Get a weather report from 'wttr.in' and save it locally.
+getforecast() { timeout --signal=1 10s curl -sf "$url/$LOCATION" > "$weatherreport" || exit 1; }
+
+lat="24.650"
+lon="77.317"
+api="bdf70823ef82354edb795b52a1147459"
+units="metric"
+
+weather_data="$(curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=$units&appid=$api")"
+
+condition="$(echo "$weather_data" | jq -r '.weather[0].description' | sed -e "s/\b\(.\)/\u\1/g")"
+
+temprature=$(echo "$weather_data" | jq -r '.main.temp' | cut -c-2)
+
+icon=$(echo "$weather_data" | jq -r '.weather[0].icon'  | tr -d 'nd')
+
+# conditon emoji
+if [[ $icon == 01 ]]; then
+    if [[ $(date "+%H") -ge 17 ]]; then
+        emoji_con=" "
+    else
+        emoji_con=" "
+    fi
+elif [[ $icon == 02 ]]; then
+    if [[ $(date "+%H") -ge 17 ]]; then
+        emoji_con=" "
+    else
+        emoji_con=" "
+    fi
+elif [[ $icon == 03 ]]; then
+	emoji_con=" "
+elif [[ $icon == 04 ]]; then
+	emoji_con=" "
+elif [[ $icon == 09 ]]; then
+	emoji_con=" "
+elif [[ $icon == 10 ]]; then
+    if [[ $(date "+%H") -ge 17 ]]; then
+        emoji_con=" "
+    else
+        emoji_con=" "
+    fi
+elif [[ $icon == 11 ]]; then
+	emoji_con=" "
+elif [[ $icon == 13 ]]; then
+	emoji_con="󰜗 "
+elif [[ $icon == 50 ]]; then
+	emoji_con=" "
+else
+	emoji_con="󰲓 "
+fi
+
+case $BUTTON in
+	1) getforecast && st -e less -Sf /home/vaproh/.cache/weatherreport ;;
+	3) notify-send "🌈 Weather module" "\- Middle click to update forecast." ;;
+esac
+
+# print temp line
+echo "^C14^  $emoji_con^C6^  $temprature°C   ^d^"

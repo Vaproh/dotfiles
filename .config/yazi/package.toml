@@ -1,0 +1,102 @@
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
+
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "3f8c863"
+hash = "87b9233a74325e95011670ed20bbd0d4"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "a7d1aa6"
+hash = "844133c7247cda086819d63a9ca5e457"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "1ee69a5"
+hash = "63679f3daf8551ff8755be38b5ced0f"
+
+[[plugin.deps]]
+use = "kirasok/torrent-preview"
+rev = "4ca5996"
+hash = "6af40ce6b2cd849b5fa32de04a598b06"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "aeca767"
+hash = "6094c7e7def6d131323e53d641f1bddd"
+
+[[plugin.deps]]
+use = "AnirudhG07/custom-shell"
+rev = "b04213d"
+hash = "3efc7ddc9bac120c618462eb994edf75"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "aeca767"
+hash = "bf6f074cd41ee33c3360341d168f9733"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "aeca767"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "88bd1c5"
+hash = "981acbe9b758b1af3a8154c932bb936d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "aeca767"
+hash = "6fe47945aff6571d76f3beb65099ad7a"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "433cf30"
+hash = "86e0312b01bc5762813c6c1d0517f073"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "aeca767"
+hash = "70898957e9e4c1ca291ff26e8fdc434"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "aeca767"
+hash = "a7ab702e1ef0c097defbc976ed34c186"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "aeca767"
+hash = "4d82cd9e7534d976f000edf9c0f68d8f"
+
+[[plugin.deps]]
+use = "orhnk/system-clipboard"
+rev = "efb8f03"
+hash = "9b8f2573da54334b04747e51556040cc"
+
+[[plugin.deps]]
+use = "lpanebr/yazi-plugins:first-non-directory"
+rev = "ca18a2c"
+hash = "5c20ffa5171dab34042e03d273dddc5b"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "9fc8fe0"
+hash = "2ad086899bf368fba211a33d8f68c39d"
+
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "b7c3376"
+hash = "d9dbd61d8b814e74a5420dba1e4788c4"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "0a4904c"
+hash = "fca231a128488a554823374f8f6d5241"
+
+[flavor]
+deps = []

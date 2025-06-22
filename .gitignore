@@ -1,0 +1,83 @@
+# === Sensitive or Private Info ===
+*.log
+*.sqlite*
+*.bak
+*.swp
+*.swo
+
+# SSH Keys (keep config, ignore actual keys)
+.ssh/id_*
+.ssh/github
+.ssh/github.pub
+.ssh/known_hosts
+!.ssh/config
+
+# GPG / Auth Tokens / Secrets
+.gnupg/
+.keyring/
+.secret
+*.pem
+*.crt
+*.key
+*token*
+*secret*
+
+# === Local Cache or Runtime Files ===
+.cache/
+local/
+.history
+recentfiles
+recent_projects
+
+# === Wallpapers, Memes, Screenshots ===
+Pictures/Memes/
+Pictures/Screenshots/
+
+# === Pywal, Theme Cache Outputs ===
+.config/wal/
+.config/*/pywal.css
+.config/*/pywal.conf
+
+# === Application States and Databases ===
+.config/mpd/database
+.config/ncmpcpp/error.log
+.config/btop/btop.log
+
+# === Cliphist Image Cache ===
+.local/bin/scripts/cliphist-rofi-img
+*.png
+*.jpg
+*.jpeg
+
+# === VCS Plugin Caches ===
+.tmux/plugins/tpm/tests/
+.tmux/plugins/tmux/.git/
+.tmux/plugins/tmux/.github/
+
+# === Unneeded Shell Files ===
+.fzf/
+.fzf.zsh
+
+# === Misc install and local scripts (optional) ===
+install*.sh
+setup-*.sh
+
+# === Exclude backups, history, temporary ===
+*~
+*.tmp
+*.bak
+*.old
+*.orig
+
+# === Only include configs ===
+!.config/**
+!.zshrc
+!.gitconfig
+!.xinitrc
+!.tmux.conf
+!.stow-local-ignore
+!.gitignore
+!.README.*
+!.local/bin/scripts/
+!.ssh/config
+

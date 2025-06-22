@@ -1,0 +1,13 @@
+show=drun
+prompt=Search...
+insensitive=true
+allow_images=true
+width=520
+height=420
+orientation=vertical
+content_halign=fill
+filter_rate=100
+key_expand=Tab
+key_exit=Escape
+hide_scrollbar=true
+image_size=24

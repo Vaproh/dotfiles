@@ -1,0 +1,31 @@
+# scripts
+install-fonts.sh
+install-yay.sh
+install-lf.sh
+install-zsh.sh
+setup-zsh.sh
+install-yay-stuff.sh
+install.sh
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+# git
+\.git
+\.gitignore
+\.gitmodules
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING

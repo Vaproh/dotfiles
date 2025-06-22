@@ -1,0 +1,93 @@
+{
+  "position": "top",
+  "reload_style_on_change": true,
+  "height": 38,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "battery",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "network",
+    "tray",
+  ],
+
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": ["cpu", "tray"],
+  },
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "Asia/Kolkata",
+    "format": " {:%a %d %b  %I:%M %p}",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": "{}% ",
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}% ",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󱐥 {capacity}%",
+    "format-alt": "{time} ",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}   {profile}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
+  "network": {
+    "format-wifi": " Wired ",
+    "format-ethernet": " Wired ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": " Unwired",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+  },
+  "pulseaudio": {
+    "format": "{volume}%  / {format_source}",
+    "format-bluetooth": "{volume}%    {format_source}",
+    "format-bluetooth-muted": " {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "on-click": "pavucontrol-qt",
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+		"active": "",
+		"default": ""
+	},
+  },
+}

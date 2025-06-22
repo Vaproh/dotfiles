@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                            |\/|            */
+/*   catppuccin-frapp.css                            /`._ |  | _.'\       */
+/*                                                      /              \      */
+/*   By: Vaproh <vaproh@proton.me>                     /     batman     \     */
+/*                                                    / .-.          .-. \    */
+/*   Created: 2025/06/07 20:47:33 by Vaproh           |/   \.-.  .-./   \|    */
+/*   Updated: 2025/06/07 20:47:33 by Vaproh                    \/             */
+/*                                                                            */
+/* ************************************************************************** */
+
+@define-color background #303446;
+@define-color foreground #C6D0F5;
+@define-color color0 #51576D;
+@define-color color1 #E78284;
+@define-color color2 #A6D189;
+@define-color color3 #E5C890;
+@define-color color4 #8CAAEE;
+@define-color color5 #F4B8E4;
+@define-color color6 #81C8BE;
+@define-color color7 #B5BFE2;
+@define-color color8 #626880;
+@define-color color9 #E78284;
+@define-color color10 #A6D189;
+@define-color color11 #E5C890;
+@define-color color12 #8CAAEE;
+@define-color color13 #F4B8E4;
+@define-color color14 #81C8BE;
+@define-color color15 #A5ADCE;

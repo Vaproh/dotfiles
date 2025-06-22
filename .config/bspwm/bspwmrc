@@ -1,0 +1,62 @@
+#! /bin/sh
+#
+#  ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗██████╗  ██████╗
+#  ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║██╔══██╗██╔════╝
+#  ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║██████╔╝██║
+#  ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║██╔══██╗██║
+#  ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║██║  ██║╚██████╗
+#  ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+#	Author	-	vaproh
+#	Repo	-	https://github.com/vaproh/dotfiles
+#	Copyright (C) 2024-2025 vaproh <vaproh@proton.me>
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+#  ╔╗ ╔═╗╔═╗╦ ╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
+#  ╠╩╗╚═╗╠═╝║║║║║║  ║  ║ ║║║║╠╣ ║║ ╦
+#  ╚═╝╚═╝╩  ╚╩╝╩ ╩  ╚═╝╚═╝╝╚╝╚  ╩╚═╝
+
+bspc config external_rules_command "${HOME}"/.config/bspwm/ExternalRules
+
+bspc config window_gap                5
+bspc config split_ratio               0.53
+bspc config single_monocle            true
+bspc config border_width              0
+
+bspc config automatic_scheme          longest_side
+bspc config initial_polarity          second_child
+bspc config removal_adjustment        true
+
+bspc config focus_follows_pointer     true
+bspc config pointer_follows_focus     true
+bspc config pointer_follows_monitor   true
+bspc config pointer_motion_interval   7
+bspc config pointer_modifier          mod4
+bspc config pointer_action1           move
+bspc config pointer_action2           resize_side
+bspc config pointer_action3           resize_corner
+
+#  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
+#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
+#  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
+
+# Launch sxhkd daemon
+pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/sxhkd/bsp-sxhkdrc & }
+
+# Launch picom
+# pidof -q picom || { picom --config "${HOME}"/.config/picom/picom.conf & }
+
+# Launch xcompmgr
+pidof -q xcompmgr || { xcompmgr & }
+
+# Restore Wallpaper
+pidof -q nitrogen || { nitrogen --restore & }
+
+# Launch clipboard daemon
+pidof -q clipcatd || { clipcatd & }
+
+# Launch polkit
+pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
+
+# Launch polybar
+pidof -q polybar || { "${HOME}"/.config/polybar/launch.sh & }

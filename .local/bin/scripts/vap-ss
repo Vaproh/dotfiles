@@ -1,0 +1,7 @@
+#!/bin/sh
+
+screenshot_dir="$HOME/Pictures/Screenshots"
+
+scrot -p "$screenshot_dir/%I:%M:%S-%p-%d-%b-%Y-screenshot.png" -e 'xclip -selection clipboard -target image/png -i $f'
+notify-send "📷 Screenshot Captured!" "You can find your screenshot in:
+~/Pictures/Screenshots/"

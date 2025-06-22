@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    # get a wallpaper
+    wall=$(find $HOME/Pictures/Wallpapers/ -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)
+else
+    wall=$1
+fi
+
+newlook() {
+
+    # set wallpaper
+    xwallpaper --zoom "$wall" &
+
+    # clear pywal cache
+    wal -c &
+
+    # genrate and setcolor scheme
+    wal -i "$wall"
+
+    # fetch colors for dwm
+    xdotool key super+F5
+
+    # update kitty
+    cp "$HOME/.cache/wal/colors-kitty.conf" "$HOME/.config/kitty/kitty.conf"
+
+    # set mouse color using polychromatic-cli
+    #source /home/vaproh/.cache/wal/color-razer
+    #/usr/bin/polychromatic-cli -o static -c $color
+
+    # update dunst
+    cp "$HOME/.cache/wal/colors-dunstrc" "$HOME/.config/dunst/dunstrc" &
+    dunst reload
+
+    # update colors for firefox
+    pywalfox update &
+
+    # update discord colors
+    # pywal-discord -p ~/.config/vesktop/themes &
+
+    # update telegram colors
+    walogram
+
+    # update gtk theme
+    # /opt/oomox/plugins/theme_oomox/change_color.sh ~/.cache/wal/colors-oomox
+
+    # send a notification that the process is completed
+    notify-send "Theme Updated!" "Your wallpapers and colors are changed!"
+}
+
+newlook
