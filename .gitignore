@@ -68,3 +68,5 @@ Pictures/Screenshots/
 !.local/bin/scripts/
 !.ssh/config
 
+.ssh/gitea
+.ssh/gitea.pub

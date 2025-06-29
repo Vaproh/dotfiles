@@ -21,12 +21,7 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": true,
-  "widgets": [
-    "buttons-grid",
-    "volume",
-    "backlight",
-    "mpris"
-  ],
+  "widgets": ["buttons-grid", "volume", "backlight", "mpris"],
   "widget-config": {
     "title": {
       "text": "Notification Center",
@@ -43,10 +38,7 @@
     "mpris": {
       "image-size": 100,
       "image-radius": 0,
-      "blacklist": [
-        "kew",
-        "firefox"
-      ]
+      "blacklist": ["kew", "firefox"]
     },
     "volume": {
       "label": "󰕾"
@@ -56,6 +48,11 @@
     },
     "buttons-grid": {
       "actions": [
+        {
+          "label": "󰂛",
+          "command": "swaync-client -d",
+          "type": "toggle"
+        },
         {
           "label": "󰐥",
           "command": "systemctl poweroff"
